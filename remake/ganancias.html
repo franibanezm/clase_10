@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="description" content="Diseño y nuevos medios, segunda versión remota" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous" />
+        <link href="style.css" rel="stylesheet" />
+        <title>Remake &#127909;</title>
+    </head>
+    <body>
+        <div class="container">
+            <nav class="d-flex justify-content-between py-3">
+                <a href="index.html">Portada</a> <a href="peliculas.html">Películas</a> <a href="locaciones.html">Locaciones</a> <a href="ganancias.html" class="active">Ganancias</a>
+            </nav>
+            <main>
+                <canvas id="grafico" height="40" width="100">
+                    <!--acá se mete el mapa-->
+                </canvas>
+            </main>
+        <div class="container fixed-bottom">
+            <footer class="d-flex justify-content-between py-3">
+                <div>Francisca Ibañez</div>
+                <div>DNO037</div>
+            </footer>
+        </div>
+        </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.0/dist/chart.min.js"></script>
+    <script>
+var ctx = document.getElementById('grafico').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Piedra Filosofal', 'Cámara Secreta', 'Prisionero de Askabán', 'Cáliz de Fuego', 'Orden del Fénix', 'Misterio del Príncipe', 'Reliquias de la Muerte p1.', 'Reliquias de la Muerte p2.'],
+        datasets: [{
+            label: '# Millones de USD recaudados',
+            data: [1007, 879.6, 796.2, 896.5, 942.2, 934, 977, 1342],
+            backgroundColor: 'rgba(20, 100, 180, 0.5)',
+            borderWidth: 0
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+    </body>
+</html>
